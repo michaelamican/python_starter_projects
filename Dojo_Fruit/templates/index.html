@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dojo Fruit Store Assignment</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+ 
+</head>
+<body>
+
+    <header>
+        <div class="navbar navbar-dark bg-dark box-shadow">
+          <div class="container d-flex justify-content-between">
+            <a href="#" class="navbar-brand d-flex align-items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+              <strong>Dojo Fruit Store</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+        </div>
+      </header>
+  
+      <main role="main">
+        <section class="jumbotron text-center">
+          <div class="container">
+            <h1 class="jumbotron-heading">Dojo Fruits</h1>
+           
+            <div id="main_table">
+              <form id="purchase" action='/checkout' method='post'>
+                <div id="selection">
+                  <h3>What would you like to buy?</h3>
+                  <table id="choice table" class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th>Fruit Name</th>
+                        <th>Quantity</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><img src="strawberry.png" alt="Strawberry"></td>
+                        <td><select name="quantity_strawberry">
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                        </select>
+                        </td>
+                     </tr>
+                      <tr>
+                        <td><img src="raspberry.png" alt="Raspberry"></td>
+                        <td><select name="quantity_raspberry">
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                        </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><img src="apple.png" alt="Apple"></td>
+                        <td><select name="quantity_apple">
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                        </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><img src="Blackberry.png" alt="Blackberry"></td>
+                        <td><select name="quantity_blackberry">
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                        </select>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div id="information">
+                  <h3>Your Information</h3>
+                  <div class="titles">
+                    <p>Name:</p>
+                    <p>Your Student ID:</p>
+                  </div>
+                  <div class="inputs">
+                      <p><input type="text" name="name" placeholder="Name"></p>
+                      <p><input type="text" name="StudID" placeholder="ID #"></p>
+                  </div>
+                  <p><a href="/checkout.html"><input id="submit" type="submit" name="submit" value="Buy me stuff!"></a></p>
+                </div>
+              </form>
+            </div>
+            <div id="sidebar">
+              <h4>Welcome to Dojo Fruit Store!</h4>
+              <p>Your dojo decided to buy fruits for all the students! Please use this app to tell us what you would like to have! Once you get your order, we'll charge your student account automatically.</p>
+              <p>Dojo Fruit Store is proudly built using Flask</p>
+              <p>As a matter of fact, we all carry flasks to the Dojo!</p>
+            </div>
+            <p>
+              <a href="/" class="btn btn-primary my-2">Go back</a>
+            </p>
+          </div>
+        </section>
+  
+      </main>
+      
+</body>
+</html>
