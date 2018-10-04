@@ -1,0 +1,151 @@
+*{
+	margin: 0 auto;
+	padding: 0 auto;
+	box-sizing: border-box;
+	font-family: tahoma;
+	text-align: center;
+}
+p{
+	font-size: 14px;
+	color: forestgreen;
+	text-shadow: 1px 1px 2px oldlace;
+	height: 60px;
+	font-size: 14px;
+}
+h3{
+	color: darkgreen;
+	font-size: 26px;
+	margin: 4px;
+	text-shadow: 1px 1px 2px olive;
+}
+h4{
+	text-align: left;
+	font-size: 14px;
+	color: darkseagreen;
+	text-shadow: 1px 1px 1px darkslategray;
+	margin: 10px;
+}
+h5{
+	font-size: 14px;
+	margin: 2px;
+	text-shadow: 1px 1px 1px oldlace;
+}
+hr{
+	width: 75%;
+	box-shadow: 2px 2px 4px rosybrown;
+}
+input{
+	font-size: 12px;
+	color: peru;
+	text-shadow: 2px 2px 3px blanchedalmond;
+	width: 40%;
+	min-width: 70px;
+	height: 25%;
+	margin: 10px 6px;
+	border: 1px solid rosybrown;
+	border-radius: 2px 4px;
+}
+
+.wrapper{
+	background: linear-gradient(45deg,olivedrab,darkolivegreen, darkolivegreen,yellowgreen);
+	height: 100%;
+	width: 100%;
+	padding: 20px 4px;
+}
+.places{
+	background: linear-gradient(papayawhip,papayawhip, papayawhip, papayawhip,tan);
+	box-shadow: 3px 3px 6px forestgreen;
+	height: 40%;
+	width: 100%;
+	padding: 70px 10px;
+	border: 1px solid rosybrown;
+	border-radius: 4px;
+}
+.location{
+	display: inline-block;
+	vertical-align: top;
+	box-shadow: 2px 2px 6px peru;
+	height: 175px;
+	width: 30%;
+	min-width: 160px;
+	margin: 10px;
+	border: 1px solid rosybrown;
+	border-radius: 1px;
+}
+#farm{
+	background: linear-gradient(beige,beige,darkkhaki);
+	box-shadow: 4px 4px 2px #a7a15ff7;
+}
+.farm{
+	background: linear-gradient(beige,beige,darkkhaki);
+	box-shadow: 4px 4px 2px #a7a15ff7;
+}
+.farm:hover {
+	background: linear-gradient(beige,khaki,olive);
+	box-shadow: 4px 4px 2px #a7a15ff7;
+}
+#cave{
+	background: linear-gradient(ivory,ivory,darkgray);
+	box-shadow: 2px 2px 4px dimgray;
+}
+.cave{
+	background: linear-gradient(ivory,ivory,darkgray);
+}
+.cave:hover {
+	background: linear-gradient(beige, ivory, ivory, gainsboro, dimgray);
+}
+#house{
+	background: linear-gradient(beige, oldlace, wheat);
+	box-shadow: 4px 4px 2px tan;
+}
+.house{
+	background: linear-gradient(oldlace, oldlace, wheat);
+	box-shadow: 4px 4px 2px tan;
+}
+.house:hover {
+	background: linear-gradient(wheat, wheat, wheat, goldenrod);
+}
+.casino{
+	background: linear-gradient(lightyellow,lightyellow,khaki);
+	box-shadow: 4px 4px 2px tan;
+}
+#casino{
+	background: linear-gradient(lemonchiffon, ivory, gold);
+	box-shadow: 4px 4px 2px tan;
+}
+.casino:hover {
+	background:linear-gradient(khaki, khaki, yellow, gold, gold);
+	box-shadow: -4px -4px 18px dodgerblue, 4px 4px 18px magenta, -6px 4px 12px chartreuse, 4px -6px 12px chartreuse;
+}
+#casino:hover{
+	box-shadow: -4px -4px 18px magenta, 4px 4px 18px chartreuse, -6px 4px 12px chartreuse, 4px -6px 12px dodgerblue;
+}
+#action{
+	border: 1px solid beige;
+    height: 15%;
+    width: 100%;
+    background: linear-gradient(blanchedalmond, blanchedalmond, bisque);
+    box-shadow: 2px 2px 4px tan;
+    text-align: left;
+    border-radius: 4px;
+    overflow: scroll;
+    padding: 10px;
+}
+#reset{
+	font-size: 18px;
+	color: saddlebrown;
+	text-shadow: 2px 2px 3px sandybrown;
+	width: 80px;
+	height: 6%;
+	margin: 10px 0;
+	border: 1px solid rosybrown;
+	background: linear-gradient(darksalmon, darksalmon, indianred);
+	border-radius: 2px 4px;
+}
+#reset:hover{
+	background: linear-gradient(lightsalmon, lightsalmon, firebrick);
+}
+form{
+	display: inline-block;
+	vertical-align: top;
+}

@@ -1,146 +1,72 @@
 <html>
 <head>
 	<title>Ninja Gold</title>
-	<style>
-	*{
-		margin: 0 auto;
-		padding: 0 auto;
-		box-sizing: border-box;
-		font-family: tahoma;
-		text-align: center;
-	}
-	p{
-		font-size: 14px;
-		color: forestgreen;
-		text-shadow: 1px 1px 2px oldlace;
-	}
-	h3{
-		color: olive;
-		font-size: 26px;
-		margin: 4px;
-		text-shadow: 1px 1px 2px olivedrab;
-	}
-	h4{
-		text-align: left;
-		font-size: 14px;
-		color: forestgreen;
-		text-shadow: 1px 1px 1px oldlace;
-		margin: 10px;
-	}
-	hr{
-		width: 75%;
-		box-shadow: 2px 2px 4px rosybrown;
-	}
-	input{
-		font-size: 12px;
-		color: peru;
-		text-shadow: 2px 2px 3px blanchedalmond;
-		width: 40%;
-		min-width: 70px;
-		height: 25%;
-		margin: 10px 6px;
-		border: 1px solid rosybrown;
-		border-radius: 8px 4px;
-	}
-	p{
-		height: 60px;
-		font-size: 14px;
-	}
-	.wrapper{
-		background: linear-gradient(palegoldenrod,palegoldenrod,floralwhite);
-		height: 100%;
-		width: 100%;
-		padding: 20px 4px;
-	}
-	.places{
-		background: linear-gradient(papayawhip,papayawhip,peachpuff);
-		box-shadow: 3px 3px 6px tan;
-		height: 40%;
-		width: 100%;
-		padding: 70px 10px;
-		border: 1px solid rosybrown;
-		border-radius: 4px;
-	}
-	.location{
-		display: inline-block;
-		vertical-align: top;
-		box-shadow: 2px 2px 6px peru;
-		height: 150px;
-		width: 20%;
-		min-width: 160px;
-		margin: 10px;
-		border: 1px solid rosybrown;
-		border-radius: 4px;
-	}
-	#farm{
-		background: linear-gradient(beige,beige,darkkhaki);
-		box-shadow: 4px 4px 2px darkkhaki;
-	}
-	#cave{
-		background: linear-gradient(whitesmoke,whitesmoke,darkgray);
-		box-shadow: 2px 2px 4px dimgray;
-	}
-	#house{
-		background: linear-gradient(blanchedalmond,blanchedalmond,wheat);
-		box-shadow: 4px 4px 2px tan;
-	}
-	#casino{
-		background: linear-gradient(lemonchiffon,lemonchiffon,moccasin);
-		box-shadow: 2px 2px 4px darksalmon;
-	}
-	#action{
-		border: 1px solid beige;
-	    height: 10%;
-	    width: 100%;
-	    background: linear-gradient(blanchedalmond, blanchedalmond, bisque);
-	    box-shadow: 2px 2px 4px tan;
-	    text-align: left;
-	    padding: 10px 4px;
-	    border-radius: 4px;
-	    overflow: scroll;
-	}
-
-	</style>
+	{% load static %}
+	<link rel='stylesheet' href='../static/css/style.css'>
 </head>
 <body>
 	<div class='wrapper'>
-		<h4 name='gold'>Your Gold: {{ gold }}</h4>
+		<h4 name='gold'>Your Gold: {{ request.session.gold }}</h4>
 		<div class='places'>
-			<form method='post' action='/process_money'>
+			<form method='post' action='/process'>
+				{% csrf_token %}
 				<div class='location' id='farm'>
 					<h3>Farm</h3>
 					<hr>
-					<p name='farm' hidden='gold'>(earns 10-20 gold)</p>
-					<input type='submit' name='farm' id='farm' value='Find Gold!'>
+
+					{% csrf_token %}
+					<input type='hidden' name='location' value='farm'> <input type='submit' name='farm' class='farm' value='Find Gold!'>
 				</div>
+			</form>
+			<form method='post' action='/process'>
 				<div class='location' id='cave'>
 					<h3>Cave</h3>
 					<hr>
-					<p name='cave' hidden='gold'>(earns 5-10 gold)</p>
-					<input type='submit' name='cave' id='cave' value='Find Gold!'>
+
+					{% csrf_token %}
+					<input type='hidden' name='location' value='cave'>
+					<input type='submit'  class='cave'name='cave' value='Find Gold!'>
 				</div>
+			</form>
+			<form method='post' action='/process'>
 				<div class='location' id='house'>
 					<h3>House</h3>
 					<hr>
-					<p name='house' hidden='gold'>(earns 2-5 gold)</p>
-					<input type='submit' class='house' name='house' id='house' value='Find Gold!'>
+
+					{% csrf_token %}
+					<input type='hidden' name='location' value='house'>
+					<input type='submit' class='house' name='house' value='Find Gold!'>
 				</div>
+			</form>
+			<form method='post' action='/process'>
 				<div class='location' id='casino'>
 					<h3>Casino</h3>
 					<hr>
-					<p name='casino' hidden='gold'>(earns/takes 0-50 gold)</p>
-					<input type='submit' name='casino' id='casino' value='Find Gold!'>
+					{% csrf_token %}
+					<input type='hidden' name='location' value='casino'>
+					<input type='submit' name='casino' class='casino' value='Find Gold!'>
 				</div>
 			</form>
 		</div>
 		<h4>Activities:</h4>
 		
 		<div id='action'>
-			{% for action in session %}
-			<p>{{ action }}</p>
+			{% for activity in request.session.activities %}
+				{% if '-' in activity %}
+					<h5 style='color: red'>
+					{{ activity }}
+					</h5>
+				{% else %}
+					<h5 style='color: green'>
+					{{ activity }} 
+					</h5>
+				{% endif %}
 			{% endfor %}
 		</div>	
-		
+		<form action='reset' method='post'>
+			{% csrf_token %}
+			<input type='submit' id='reset' value='Restart'>
+		</form>
 	</div>
-</body>
-</html>
+
+</body></html>
