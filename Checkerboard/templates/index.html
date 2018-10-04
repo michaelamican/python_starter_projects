@@ -1,0 +1,51 @@
+<!---Checkerboard-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style>
+	*{
+		margin: 0 auto;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	body{
+		background-color: #fffffe;
+	}
+	.wrapper{
+		text-align: center;
+	}
+	.color1{
+		height: 80px;
+		width: 80px;
+		background-color: peru;
+	}
+	.color0{
+		height: 80px;
+		width: 80px;
+		background-color: antiquewhite;
+	}
+	table{
+		border: 2px solid rosybrown;
+		box-shadow: 2px 2px 6px burlywood;
+	}
+	td{
+		border: 1px solid rosybrown;
+	}
+	</style>
+	<title>Playground</title>
+</head>
+<body>
+	<div class="wrapper">
+		<table>
+			{% for i in range(row): %}
+			<tr>
+				{% for j in range(col): %}
+				<td class='color{{(i+j)%2}}'></td>
+				{% endfor %}
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+</body>
+</html>
