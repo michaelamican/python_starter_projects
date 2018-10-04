@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title>Session Words</title>
+	<meta charset='utf-8'>
+	{% load static %}
+	<link rel='stylesheet' href='../static/css/style.css'>
+</head>
+<body>
+	<div id='wrapper'>
+		<div id='options'>
+			<form action='/submit' method='post'>
+				{% csrf_token %}
+				<h3>Add a new word</h3>
+				<input id ='word' type='text' name='word' placeholder='Say something!'>
+				<hr>
+				<label for='color'>Choose a color:</label>
+			<!-- 	<input type='hidden' name='color' value='black'> -->
+				<input type='radio' name='color' value='cornflowerblue' checked>Cornflower
+				<input type='radio' name='color' value='thistle'>Lavender
+				<input type='radio' name='color' value='darkseagreen'>Sage 
+				<hr>
+				<label for='big'>Show in BIG fonts!</label>
+				<input type='hidden' name='size' value='26'>
+				<input type='checkbox' name='size' value='40' checked>
+				<hr>
+				<input type='submit' class='submit' value='Post'>
+			</form>
+		</div>
+		<div id='divider'></div>
+		<div id='wall'>
+			<form action = '/reset' method='post'>
+			<input type='submit' class='reset' value='Clear Session' action='/reset'>
+			{% csrf_token %}
+			</form>
+
+			{% for word in request.session.word %}
+			<p id='myword' style='color:{{word.color }}; font-size: {{ word.size }}px'>{{ word.word }}</p>
+			<p id='addedon'> --added on {{ word.datetime }}</p>
+			{% endfor %}
+			
+	</div>
+</html>

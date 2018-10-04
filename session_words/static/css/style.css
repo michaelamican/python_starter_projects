@@ -1,0 +1,81 @@
+*{
+	padding: 0;
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+#wrapper{
+	height: 100%;
+	width: 100%;
+	background: linear-gradient(linen, linen, linen, linen, wheat);
+}
+#options{
+	background: oldlace;
+	display: inline-block;
+	vertical-align: top;
+	padding: 10px;
+	height: 100%;
+	width: 45%;
+}
+#word{
+	height: 30px;
+	width: 120px;
+	box-shadow: 2px 2px 4px tan;
+	border-radius: 3px;
+	margin: 10px;
+}
+.reset, .submit{
+	background: linear-gradient(tan, wheat, tan);
+	color: indianred;
+	border-radius: 3px;
+	box-shadow: 1px 1px 4px burlywood;
+	margin: 10px;
+	height: 36px;
+	width: 120px;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 8px;
+}
+input{
+	margin: 5px;
+}
+#divider{
+	display: inline-block;
+	vertical-align: top;
+	margin: 0 -2px;
+	height: 100%;
+	width: 1px;
+	background: linear-gradient(wheat, wheat, wheat, linen, linen);
+	box-shadow: 1px 1px 4px tan;
+}
+#wall{
+	display: inline-block;
+	vertical-align: top;
+	padding: 10px;
+	height: 100%;
+	width: 45%;
+}
+#myword{
+	margin: 10px 20px 0 0;
+	text-shadow: 1px 1px 2px tan;
+}
+#addedon{
+	margin: 2px 0 0 40%;
+	font-size: 16px;
+	color: darkolivegreen;
+	text-shadow: 1px 1px 1px tan;
+}
+h3{
+	color: olivedrab;
+	font-size: 30px;
+	margin: 10px 0;
+}
+label{
+	color: darkolivegreen;
+	margin: 10px 0;
+	font-size: 20px;
+}
+hr{
+	color: olivedrab;
+	box-shadow: 0px 0px 5px darkolivegreen;
+	margin: 10px 0;
+}
