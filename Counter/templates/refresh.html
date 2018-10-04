@@ -1,0 +1,43 @@
+<html>
+<head>
+	<title>Counter</title>
+	<style>
+				*{
+			margin: 0 auto;
+			padding: 0;
+			box-sizing: border-box;
+			font: tahoma;
+		}
+		.wrapper{
+			height:100%;
+			width: 100%;
+			background: linear-gradient(ghostwhite, aliceblue, aliceblue);
+			text-align: center;
+			padding: 20%;
+		}
+		input{
+			height: 20px;
+			width: 50px;
+			border-radius: 3px;
+			box-shadow: 2px 2px 6px dimgray;
+			background-color: ghostwhite;
+			border: 1px solid darkgray;
+		}
+		hr{
+			margin: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class='wrapper'>
+		<h1>Counter</h1>
+		<h4>{{ session['count'] }} times.</h4>
+		<hr>
+		<a href='/refresh' method='post'>
+			<input type='submit' name='double' value='Add 2'>
+		</a>
+		<a href='/destroy_session'>
+			<input type='submit'  name='reset' value='Reset'>
+	</div>
+</body>
+</html>
