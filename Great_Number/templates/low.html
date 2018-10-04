@@ -1,0 +1,81 @@
+<html>
+<head>
+	<title>Great Number</title>
+	<style>
+		*{
+			margin: 0 auto;
+			padding: 0 auto;
+			box-sizing: border-box;
+			font-family: garamond;
+			text-align: center;
+		}
+		h2{
+			text-shadow: 2px 2px 2px navajowhite;
+			font-size: 30px;
+		}
+		h3{
+			text-shadow: 2px 2px 2px bisque;
+			font-size: 22px;
+			margin: 30px;
+		}
+		h4{
+			color: seashell;
+			text-shadow: 1px 1px 1px sienna;
+			font-size: 22px;
+			margin: 10px;
+		}
+		h5{
+			text-shadow: 1px 1px 1px bisque;
+			font-size: 18px;
+			margin: 10px;
+		}
+		.wrapper{
+			background: linear-gradient(floralwhite, floralwhite, floralwhite, antiquewhite);
+			height: 100%;
+			width: 100%;
+			padding: 20%;
+		}
+		#bar, #button{
+			background-color: snow;
+			border: 1px solid dimgray;
+			box-shadow: 2px 2px 6px burlywood;
+			border-radius: 9px 3px;
+			text-align: center;
+			font-size: 16px;
+			height: 30px;
+			width: 90px;
+			padding: 6px auto;
+			margin-top: 20px;
+		}
+		hr{
+			box-shadow: 3px 3px 9px bisque;
+		}
+		#wrong{
+			height: 200px;
+			width: 200px;
+			padding-top: 75px;
+			margin-top: 20px;
+			background: linear-gradient(indianred, indianred, firebrick);
+			border: 2px solid saddlebrown;
+			border-radius: 4px;
+			box-shadow: 3px 3px 6px saddlebrown;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<h2>Welcome to the Great Number Game!</h2>
+		<h3>I am thinking of a number between 1 and 100.</h3>
+		<h5>You guessed {{ guess }}</h5>
+		<hr>
+		<div id="wrong">
+			<h4>Too low!</h4>
+		</div>
+		<form method='post' action='/evaluating'>
+			<input id='bar' type='text' placeholder='Higher' name='bar'><br>
+			<a href='/evaluating'><input id='button' type='submit' value='Try Again!' name='input_submit'></a>
+		</form>
+	</div>
+</body>
+</html>
