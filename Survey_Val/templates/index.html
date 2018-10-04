@@ -1,0 +1,126 @@
+<html>
+<head>	
+	<style>
+		*{
+			margin: 0 auto;
+			background-color: seashell;
+			font: garamond;
+		}
+		h3{
+			font: garamond;
+			font-size: 18px;
+			text-align: left;
+			display: inline-block;
+		}
+		input{
+			background-color: white;
+			border: 1px solid whitesmoke;
+			box-shadow: 2px 2px 6px gainsboro;
+			margin: 0;
+			font-size: 18px;
+			border-radius: 10px 5px;
+			display: inline-block;
+		}
+		h5{
+			margin: 0;
+		}
+		textarea {
+			width: 400px;
+			height: 20%;
+			background-color: white;
+			box-shadow: 2px 2px 6px darkgray;
+			font-size: 18px;
+			border-radius: 10px 5px;
+			display: block;
+			padding: 4px;
+		}
+		form{
+			display: inline-block;
+			margin: 30px 30px;
+		}
+		p{
+			font: garamond;
+			font-size: 14px;
+			margin: 20px 50px;
+			text-align: left;
+		}
+		#forms{
+			display: inline-block;
+			vertical-align: top;
+		}
+		#titles{
+			display: inline-block;
+			vertical-align: top;
+		}
+		#survey_content{
+			
+		}
+		button{
+			box-align: right;
+			border: 1px solid white;
+			box-shadow: 2px 2px 6px darkgray;
+			font-size: 18px;
+			border-radius: 10px 5px;
+		}
+		#warning{
+			font-size: 30px;
+			color: indianred;
+			background-color: ghostwhite;
+			font: arial;
+			width: 100%;
+			height: 100%px;
+			word-wrap: overflow;
+		}
+	</style>	
+	<title>Dojo Survey with Validation</title>
+</head>
+<body>
+	<div id="wrapper">
+		<form action='/evaluate' method='post'>
+			<div id="titles">
+				<h3>Your Name: <input name='username' type="text" placeholder="New website who dis"></h3>
+						<h5>Must be at least 8 characters</h5>
+				<h3>Dojo Location: <select name='campus'>
+					<option value="nochoice" name='default'>Select a campus</option>
+					<option value="East Bay">East Bay, CA</option>
+					<option value="Silicon Valley">Silicon Valley, CA</option>
+					<option value="Los Angeles">Los Angeles, CA</option>
+					<option value="Seattle">Seattle, WA</option>
+					<option value="Dallas">Dallas, TX</option>
+					<option value="Tulsa">Tulsa, OK</option>
+					<option value="Chicago">Chicago, IL</option>
+					<option value="Tysons">Tyson's Corner, VA</option>
+				</select></h3>
+				<br>
+				<h3>Favorite Language: <select name='language'>
+					<option value="nochoice" name='default'>Select a language</option>
+					<option value="Python">Python</option>
+					<option value="Blockchain">Blockchain</option>
+					<option value="Java">Java</option>
+					<option value="javaScript">jS</option>
+					<option value="C++">C++</option>
+					<option value="Ruby">Ruby</option>
+					<option value="Other">Other</option>
+				</select></h3>
+				<br>
+				<h3>Comment (Optional):</h3>
+			</div>
+			<div id="survey_content">
+				<textarea height=80px width=200px placeholder="Your thoughts?" name="comment"></textarea>
+				<h5> Must be no greater than 255 characters</h5>
+			</div>
+			<input type="submit" value="Submit">
+		</form>
+		{% with messages = get_flashed_messages() %}
+					{% if messages %}
+						{% for message in messages %}
+							<p>{{message}}</p>
+						{% endfor %}
+					{% endif %}
+				{% endwith %}
+		</div>
+
+
+		
+</body>
+</html>
