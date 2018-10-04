@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML Table</title>
+	<style>
+	*{
+		margin: auto auto;
+		padding: 0;
+		font: 20px tahoma;
+		color: midnightblue;
+		background-color: linen;
+		text-align: center;
+	}
+	table{
+		box-shadow: 2px 2px 6px slategray;
+	}
+	td{
+		background-color: #EFEFEF;
+		padding: 10px 5px;
+		border: 1px solid lightsteelblue;
+		color: darksalmon;
+	}
+	</style>
+</head>
+<body>
+	<table>
+		<thead>
+			<td>First Name</td>
+			<td>Last Name</td>
+			<td>Full Name</td>
+		</thead>
+		<tbody>
+			<tr>
+			{% for val in users: %}	
+				<td>{{ val['first_name'] }}</td>
+				<td>{{ val['last_name'] }}</td>
+				<td>{{ val['first_name'] }} {{ val['last_name'] }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+</body>
+</html>
