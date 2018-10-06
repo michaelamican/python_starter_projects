@@ -1,0 +1,57 @@
+<html>
+<head>
+	<title></title>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../static/css/materialize.min.css"  media="screen,projection"/>
+
+    <style>
+    *{
+    	text-align: center
+    	margin: 2px auto;
+    	padding: 2px auto;
+    }
+	</style>
+
+</head>
+<body>
+	<script type="text/javascript" src="../static/js/materialize.min.js"></script>
+	<h3>These are some of my friends!</h3>
+	<table>
+	 	<thead>
+	 		<tr>
+	 			<th>
+	 				First Name
+	 			</th>
+	 			<th>
+	 				Last Name
+	 			</th>
+	 			<th>
+	 				Occupation
+	 			</th>
+	 		</tr>
+	 	</thead>
+	 	<tbody>
+	 		{% for friend in friends %}
+	 		<tr>
+	 			<td>{{ friend.first_name }}
+	 			</td>
+	 			<td>{{ friend.last_name }}
+	 			</td>
+	 			<td>{{ friend.occupation }}</td>
+	 		</tr>
+	 		{% endfor %}
+	 	</tbody>
+	</table>
+	<hr>
+	<h3 style="text-decoration: underline">Add a friend</h3>
+	<div id='insert'>
+		<form action='/create_friend' method='post'>
+			<p>First name:<input type='text' name='first_name' placeholder='First Name'></p>
+			<p>Last name:<input type='text' name='last_name' placeholder='Last Name'></p>
+			<p>Occupation:<input type='text' name='occupation' placeholder='Occupation'></p>
+			<input type='submit' value='Add' action='/create_friend'>
+		</form>
+	</div>
+</body>
+</html>
