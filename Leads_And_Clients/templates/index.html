@@ -1,0 +1,85 @@
+<html>
+<head>
+	<title>Client and Leads</title>
+
+	<script>
+		window.onload = function () {
+
+		var options = {
+			title: {
+				text: "Clients and Leads"
+			},
+			subtitles: [{
+				text: "As of {{ request.form['updated_at']|safe }}"
+			}],
+			animationEnabled: true,
+			data: [{
+				type: "pie",
+				startAngle: 40,
+				toolTipContent: "<b>{label}</b>: {y}",
+				showInLegend: "true",
+				legendText: "{label}",
+				indexLabelFontSize: 16,
+				indexLabel: "{label} - {y}",
+				dataPoints: [
+					{ y: 9, label: "Michael"},
+					{ y: 8, label: "Juan" },
+					{ y: 7, label: "Caroline" },
+					{ y: 6, label: "Krishna" },
+					{ y: 5, label: "Rudy" }
+				]
+			}]
+		};
+		$("#chartContainer").CanvasJSChart(options);
+		}
+
+
+	</script>
+	<style>
+		#top_bar input .date{
+			display: inline-block;
+		}
+		#top_bar input #button{
+
+		}
+		#content{
+			width: 50%;
+		}
+
+	</style>
+</head>
+<body>
+	<div id='top_bar'>
+		<form action='/update' method='post'>
+			<input class='date' type='date' name='beginning'>
+			<input class='date' type='date' name='end'>
+			<input id ='button' type='submit' method='post' value='Update'>
+		</form>
+	</div>
+	<div id='content'>
+		<h3 style="text-decoration: underline">Clients and Leads</h3>
+		<table>
+			<thead>
+				<tr>
+					<th>Client Name</th>
+					<th>Number of Leads</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for clients in all_clients %}
+				<tr>
+					<td>
+						{{clients.client}}
+					</td>
+					<td>
+						{{clients.leads}}
+					</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+	<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+	<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+</body>
+</html>
